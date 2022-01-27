@@ -33,11 +33,8 @@ for line in lines:
         compiledDictionary[words[0]] = synonyms
 
 
-#target = random.choice(list(compiledDictionary.items()))[0]
-#start = random.choice(list(compiledDictionary.items()))[0]
-
-target = "heat"
-start = "alive"
+target = random.choice(list(compiledDictionary.items()))[0]
+start = random.choice(list(compiledDictionary.items()))[0]
 
 
 print("Your start word is \"{}\"".format(start))
@@ -60,7 +57,7 @@ while(True):
 
     options = compiledDictionary.get(currWord)
     random.shuffle(options)
-    options = options[0:min(len(options), 7)]
+    options = options[0:min(len(options), 11)]
 
     if(target in compiledDictionary.get(currWord)):
         options.pop(0)
@@ -68,7 +65,7 @@ while(True):
     index = 0
     while index < len(options):
         if options[index] not in compiledDictionary:
-            options.pop(i)
+            options.pop(index)
             continue
         index += 1
 
